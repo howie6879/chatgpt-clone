@@ -32,9 +32,7 @@ class Backend_Api:
             _conversation = request.json["meta"]["content"]["conversation"]
             prompt = request.json["meta"]["content"]["parts"][0]
             current_date = datetime.now().strftime("%Y-%m-%d")
-            system_message = (
-                "在回答中开启深度思考。请用 <think> 和</think> 包裹你的内部推理过程"
-            )
+            system_message = "开启深度思考。请用 <think> 和 </think> 包裹你的内部推理过程，最终回复要简洁自然。"
 
             extra = []
             if internet_access:
