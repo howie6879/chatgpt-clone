@@ -97,7 +97,7 @@ const ask_gpt = async (message) => {
     message_box.innerHTML += `
             <div class="message">
                 <div class="user">
-                    ${gpt_image} <i class="fa-regular fa-phone-arrow-down-left"></i>
+                    ${gpt_image} 
                 </div>
                 <div class="content" id="gpt_${window.token}">
                     <div id="cursor"></div>
@@ -387,12 +387,12 @@ const load_conversations = async (limit, offset, loader) => {
     box_conversations.innerHTML += `
     <div class="convo" id="convo-${conversation.id}">
       <div class="left" onclick="set_conversation('${conversation.id}')">
-          <i class="fa-regular fa-comments"></i>
+          <i class="far fa-comments"></i>
           <span class="convo-title">${conversation.title}</span>
       </div>
-      <i onclick="show_option('${conversation.id}')" class="fa-regular fa-trash" id="conv-${conversation.id}"></i>
-      <i onclick="delete_conversation('${conversation.id}')" class="fa-regular fa-check" id="yes-${conversation.id}" style="display:none;"></i>
-      <i onclick="hide_option('${conversation.id}')" class="fa-regular fa-x" id="not-${conversation.id}" style="display:none;"></i>
+      <i onclick="show_option('${conversation.id}')" class="fas fa-trash-can" id="conv-${conversation.id}"></i>
+      <i onclick="delete_conversation('${conversation.id}')" class="fas fa-square-check" id="yes-${conversation.id}" style="display:none;"></i>
+      <i onclick="hide_option('${conversation.id}')" class="fas fa-trash-can" id="not-${conversation.id}" style="display:none;"></i>
     </div>
     `;
   }

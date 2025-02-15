@@ -17,11 +17,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="manifest" href="/assets/img/site.webmanifest">
-    <script src="/assets/js/icons.js"></script>
     <script src="/assets/js/chat.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@latest/dist/markdown-it.min.js"></script>
     <link rel="stylesheet"
         href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/base16/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <script>
         const user_image = `<img src="/assets/img/user.png" alt="User Avatar">`;
         const gpt_image = `<img src="/assets/img/deepseek_logo.jpg" alt="GPT Avatar">`;
@@ -72,18 +73,18 @@
         <div class="box conversations">
             <div class="top">
                 <button class="new_convo" onclick="new_conversation()">
-                    <i class="fa-regular fa-plus"></i>
+                    <i class="far fa-plus"></i>
                     <span>New Conversation</span>
                 </button>
                 <div class="spinner"></div>
             </div>
             <div class="bottom_buttons">
                 <button onclick="delete_conversations()">
-                    <i class="fa-regular fa-trash"></i>
+                    <i class="fas fa-trash-can"></i>
                     <span>Clear Conversations</span>
                 </button>
                 <!-- <div class="info">
-                    <i class="fa-regular fa-circle-info"></i>
+                    <i class="far fa-circle-info"></i>
                     <span class="convo-title">By: @xtekky<br>
                         Version: 0.0.1-beta<br>
                         Release: 2023-04-18<br>
@@ -95,7 +96,7 @@
             <div class="stop_generating stop_generating-hidden">
                 <button id="cancelButton">
                     <span>Stop Generating</span>
-                    <i class="fa-regular fa-stop"></i>
+                    <i class="far fa-stop"></i>
                 </button>
             </div>
             <div class="box" id="messages">
@@ -105,16 +106,16 @@
                     <textarea id="message-input" placeholder="Ask a question" cols="30" rows="10"
                         style="white-space: pre-wrap;" oninput="resizeTextarea(this)"></textarea>
                     <div id="send-button">
-                        <i class="fa-regular fa-paper-plane-top"></i>
+                        <i class="far fa-paper-plane-top"></i>
                     </div>
                 </div>
             </div>
             <div class="buttons">
-                <!-- <div class="field">
+                <div class="field" style="display: none;">
                     <input type="checkbox" id="switch" />
                     <label for="switch"></label>
                     <span class="about">Web Access</span>
-                </div> -->
+                </div>
                 <div class="field">
                     <select name="model" id="model">
                         <option value="deepseek/deepseek-r1/community">deepseek-r1</option>
@@ -124,7 +125,7 @@
                     </select>
                     <!-- <span class="about">Model</span> -->
                 </div>
-                <!-- <div class="field">
+                <div class="field" style="display: none;">
                     <select name="jailbreak" id="jailbreak">
                         <option value="default" selected>default</option>
                         <option value="gpt-math-1.0">math 1.0</option>
@@ -134,12 +135,12 @@
                         <option value="gpt-dev-2.0">dev 2.0</option>
                         <option value="gpt-evil-1.0">evil 1.0</option>
                     </select>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
     <div class="mobile-sidebar">
-        <i class="fa-solid fa-bars"></i>
+        <i class="fas fa-bars"></i>
     </div>
 </body>
 

@@ -26,12 +26,15 @@ class Backend_Api:
 
     def _conversation(self):
         try:
-            jailbreak = request.json.get("jailbreak", default)
+            jailbreak = request.json.get("jailbreak", "default")
             internet_access = request.json["meta"]["content"]["internet_access"]
+            print(internet_access)
             _conversation = request.json["meta"]["content"]["conversation"]
             prompt = request.json["meta"]["content"]["parts"][0]
             current_date = datetime.now().strftime("%Y-%m-%d")
-            system_message = f"You are ChatGPT also known as ChatGPT, a large language model trained by OpenAI. Strictly follow the users instructions. Knowledge cutoff: 2021-09-01 Current date: {current_date}"
+            system_message = (
+                "在回答中开启深度思考。请用 <think> 和</think> 包裹你的内部推理过程"
+            )
 
             extra = []
             if internet_access:
@@ -107,8 +110,6 @@ class Backend_Api:
                         break
 
                     except Exception as e:
-                        print(e)
-                        print(e.__traceback__.tb_next)
                         continue
 
             return self.app.response_class(stream(), mimetype="text/event-stream")
