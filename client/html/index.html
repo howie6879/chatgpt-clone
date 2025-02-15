@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
-    <meta name="description" content="A conversational AI system that listens, learns, and challenges">
-    <meta property="og:title" content="ChatGPT">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="DeepSeek-R1 Online offers a free, real-time AI assistant with no login required. Get instant help for coding, data analysis, learning, and more. Experience advanced AI support 24/7 without any sign-up.">
+    <meta property="og:title" content="DeepSeek R1 Online: Free No Login">
     <meta property="og:image" content="https://openai.com/content/images/2022/11/ChatGPT.jpg">
-    <meta property="og:description" content="A conversational AI system that listens, learns, and challenges">
-    <meta property="og:url" content="https://chat.acy.dev">
+    <meta property="og:description"
+        content="DeepSeek-R1 Online offers a free, real-time AI assistant with no login required. Get instant help for coding, data analysis, learning, and more. Experience advanced AI support 24/7 without any sign-up.">
+    <!-- <meta property="og:url" content="https://chat.acy.dev"> -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
@@ -22,7 +24,7 @@
         href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/base16/dracula.min.css">
     <script>
         const user_image = `<img src="/assets/img/user.png" alt="User Avatar">`;
-        const gpt_image = `<img src="/assets/img/gpt.png" alt="GPT Avatar">`;
+        const gpt_image = `<img src="/assets/img/deepseek_logo.jpg" alt="GPT Avatar">`;
     </script>
     <style>
         .hljs {
@@ -57,10 +59,11 @@
             background: #8b3dff;
         }
     </style>
+
     <script src="/assets/js/highlight.min.js"></script>
     <script src="/assets/js/highlightjs-copy.min.js"></script>
     <script>window.conversation_id = `{{chat_id}}`</script>
-    <title>ChatGPT</title>
+    <title>DeepSeek R1 Online: Free No Login</title>
 </head>
 
 <body>
@@ -107,11 +110,11 @@
                 </div>
             </div>
             <div class="buttons">
-                <div class="field">
+                <!-- <div class="field">
                     <input type="checkbox" id="switch" />
                     <label for="switch"></label>
                     <span class="about">Web Access</span>
-                </div>
+                </div> -->
                 <div class="field">
                     <select name="model" id="model">
                         <option value="deepseek/deepseek-r1/community">deepseek-r1</option>
@@ -121,7 +124,7 @@
                     </select>
                     <!-- <span class="about">Model</span> -->
                 </div>
-                <div class="field">
+                <!-- <div class="field">
                     <select name="jailbreak" id="jailbreak">
                         <option value="default" selected>default</option>
                         <option value="gpt-math-1.0">math 1.0</option>
@@ -131,27 +134,7 @@
                         <option value="gpt-dev-2.0">dev 2.0</option>
                         <option value="gpt-evil-1.0">evil 1.0</option>
                     </select>
-                </div>
-
-                <form class="color-picker" action="">
-                    <fieldset>
-                        <legend class="visually-hidden">Pick a color scheme</legend>
-                        <label for="light" class="visually-hidden">Light</label>
-                        <input type="radio" title="light" name="theme" id="light" checked>
-
-                        <label for="pink" class="visually-hidden">Pink theme</label>
-                        <input type="radio" title="pink" id="pink" name="theme">
-
-                        <label for="blue" class="visually-hidden">Blue theme</label>
-                        <input type="radio" title="blue" id="blue" name="theme">
-
-                        <label for="green" class="visually-hidden">Green theme</label>
-                        <input type="radio" title="green" id="green" name="theme">
-
-                        <label for="dark" class="visually-hidden">Dark theme</label>
-                        <input type="radio" title="dark" id="dark" name="theme">
-                    </fieldset>
-                </form>
+                </div> -->
             </div>
         </div>
     </div>
