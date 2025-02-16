@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // 确保标题可见
+  document.querySelector('.fixed-header').style.visibility = 'visible';
+  document.querySelector('.fixed-header h1').style.visibility = 'visible';
+});
+
 const query = (obj) =>
   Object.keys(obj)
     .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(obj[k]))
@@ -255,7 +261,7 @@ const show_option = async (conversation_id) => {
 
   conv.style.display = "none";
   yes.style.display = "block";
-  not.style.display = "block"; 
+  not.style.display = "block";
 }
 
 const hide_option = async (conversation_id) => {
@@ -265,14 +271,14 @@ const hide_option = async (conversation_id) => {
 
   conv.style.display = "block";
   yes.style.display = "none";
-  not.style.display = "none"; 
+  not.style.display = "none";
 }
 
 const delete_conversation = async (conversation_id) => {
   localStorage.removeItem(`conversation:${conversation_id}`);
 
   const conversation = document.getElementById(`convo-${conversation_id}`);
-    conversation.remove();
+  conversation.remove();
 
   if (window.conversation_id == conversation_id) {
     await new_conversation();
@@ -311,11 +317,10 @@ const load_conversation = async (conversation_id) => {
                     ${item.role == "assistant" ? gpt_image : user_image}
                 </div>
                 <div class="content">
-                    ${
-                      item.role == "assistant"
-                        ? markdown.render(item.content)
-                        : item.content
-                    }
+                    ${item.role == "assistant"
+        ? markdown.render(item.content)
+        : item.content
+      }
                 </div>
             </div>
         `;
@@ -460,12 +465,12 @@ window.onload = async () => {
     }
   }
 
-message_input.addEventListener(`keydown`, async (evt) => {
+  message_input.addEventListener(`keydown`, async (evt) => {
     if (prompt_lock) return;
     if (evt.keyCode === 13 && !evt.shiftKey) {
-        evt.preventDefault();
-        console.log('pressed enter');
-        await handle_ask();
+      evt.preventDefault();
+      console.log('pressed enter');
+      await handle_ask();
     } else {
       message_input.style.removeProperty("height");
       message_input.style.height = message_input.scrollHeight + 4 + "px";

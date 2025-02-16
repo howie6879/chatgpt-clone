@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-    --colour-1: #ffffff;  /* 主背景色改为纯白 */
-    --colour-2: #f5f5f5;  /* 次要背景色使用浅灰 */
-    --colour-3: #333333;  /* 主文字颜色改为深色 */
+    --colour-1: #ffffff;
+    /* 主背景色改为纯白 */
+    --colour-2: #f5f5f5;
+    /* 次要背景色使用浅灰 */
+    --colour-3: #333333;
+    /* 主文字颜色改为深色 */
     --colour-4: #f8f8f8;
     --colour-5: #fafafa;
     --colour-6: #f0f0f0;
@@ -37,18 +40,71 @@ body {
 
 body {
     position: fixed;
-    width: 100%;   
-    height: 100vh;  
-    overflow: hidden; 
-    padding: var(--section-gap);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    /* 移除body的内边距 */
     background: var(--colour-1);
     color: var(--colour-3);
+}
+
+.gradient {
+    top: 40px;
+    /* 调整渐变背景位置 */
+    height: calc(100% - 40px);
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--colour-1);
+    z-index: 1000;
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--section-gap);
+    margin-top: 10px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--colour-3);
+    font-weight: 600;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+@media screen and (max-width: 990px) {
+
+    .site-header {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .site-header h1 {
+        font-size: 1.1rem;
+    }
+
+    .row {
+        margin-top: 5px;
+        height: calc(100vh - 5px);
+    }
 }
 
 .row {
     display: flex;
     gap: var(--section-gap);
-    height: 100%;
+    margin-top: 30px;
+    /* 与固定标题的高度一致 */
+    height: calc(100vh - 30px);
+    /* 减去标题高度 */
+    padding-top: var(--section-gap);
 }
 
 .box {
@@ -61,9 +117,16 @@ body {
     border: 1px solid var(--blur-border);
 }
 
+/* 确保对话框区域高度正确 */
+.box.conversations {
+    height: calc(100% - var(--section-gap));
+}
+
 .conversations {
     max-width: 260px;
     padding: var(--section-gap);
+    overflow-y: auto;
+    padding-bottom: var(--section-gap);
     overflow: auto;
     flex-shrink: 0;
     display: flex;
@@ -176,6 +239,15 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.convo-title a {
+    text-decoration: none;
+}
+
+.convo-title a:hover {
+    text-decoration: underline
+}
+
 
 .message {
 
@@ -396,13 +468,16 @@ input:checked+label:after {
 }
 
 .disable-scrollbars::-webkit-scrollbar {
-  background: transparent; /* Chrome/Safari/Webkit */
-  width: 0px;
+    background: transparent;
+    /* Chrome/Safari/Webkit */
+    width: 0px;
 }
-    
+
 .disable-scrollbars {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
 }
 
 select {
@@ -584,16 +659,16 @@ ul {
     }
 
     .buttons {
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-bottom: 10vh;
-    margin-bottom: 10vh;
-}
+        flex-wrap: wrap;
+        gap: 5px;
+        padding-bottom: 10vh;
+        margin-bottom: 10vh;
+    }
 
     .field {
-    min-height: 5%;
-    width: fit-content;
-}
+        min-height: 5%;
+        width: fit-content;
+    }
 
     .mobile-sidebar {
         display: flex !important;
